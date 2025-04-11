@@ -1,0 +1,317 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+@layer base {
+  .dark {
+    /* Main UI Colors - Dark Blue/Purple Theme */
+    --background: 240 60% 8%; /* Dark blue/purple background */
+    --foreground: 0 0% 98%; /* Light text color */
+    --card: 240 50% 13%; /* Slightly lighter than background for cards */
+    --card-foreground: 0 0% 100%; /* White text on cards */
+    --popover: 240 45% 12%; /* Popover background */
+    --popover-foreground: 0 0% 100%; /* White text on popovers */
+    
+    /* Secondary Colors */
+    --primary: 6 77% 69%; /* #FF6F61 (Coral Red) */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 210 100% 66%; /* Bright blue accent (#66A3FF) */
+    --secondary-foreground: 0 0% 100%; /* White text on secondary */
+    
+    /* Accent Colors */
+    --muted: 240 30% 20%; /* Muted dark blue */
+    --muted-foreground: 210 40% 80%; /* Light blue for muted text */
+    --accent: 250 100% 72%; /* Purple accent (#9966FF) */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
+    
+    /* Other UI Elements */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 40% 18%; /* Dark blue border */
+    --input: 240 40% 16%; /* Dark blue input background */
+    --ring: 210 100% 66%; /* Bright blue for focus rings */
+    
+    /* Chart Colors */
+    --chart-1: 6 77% 69%; /* #FF6F61 (Coral Red) */
+    --chart-2: 174 59% 56%; /* #4ECDC4 (Teal) */
+    --chart-3: 231 47% 56%; /* #5C6BC0 (Darker Blue) */
+    --chart-4: 146 44% 62%; /* #76C893 (Soft Green) */
+    --chart-5: 26 100% 67%; /* #FF9F55 (Peach) */
+    
+    --radius: 0.5rem;
+    
+    /* Sidebar Colors */
+    --sidebar-background: 240 60% 10%; /* Dark blue sidebar */
+    --sidebar-foreground: 0 0% 100%; /* White text on sidebar */
+    --sidebar-primary: 210 100% 66%; /* Bright blue for primary sidebar elements */
+    --sidebar-primary-foreground: 0 0% 100%; /* White text */
+    --sidebar-accent: 240 50% 15%; /* Slightly lighter than background for accent */
+    --sidebar-accent-foreground: 210 40% 80%; /* Light blue text */
+    --sidebar-border: 240 40% 15%; /* Dark blue border */
+    --sidebar-ring: 210 100% 66%; /* Bright blue ring */
+  }
+
+  :root {
+    /* Main UI Colors - Dark Blue/Purple Theme */
+    --background: 240 60% 8%; /* Dark blue/purple background */
+    --foreground: 0 0% 98%; /* Light text color */
+    --card: 240 50% 13%; /* Slightly lighter than background for cards */
+    --card-foreground: 0 0% 100%; /* White text on cards */
+    --popover: 240 45% 12%; /* Popover background */
+    --popover-foreground: 0 0% 100%; /* White text on popovers */
+    
+    /* Secondary Colors */
+    --primary: 210 100% 66%; /* Bright blue accent (#66A3FF) */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 250 100% 72%; /* Purple accent (#9966FF) */
+    --secondary-foreground: 0 0% 100%; /* White text on secondary */
+    
+    /* Accent Colors */
+    --muted: 240 30% 20%; /* Muted dark blue */
+    --muted-foreground: 210 40% 80%; /* Light blue for muted text */
+    --accent: 6 77% 69%; /* #FF6F61 (Coral Red) */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
+    
+    /* Other UI Elements */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 30% 22%; /* Dark blue border */
+    --input: 240 30% 16%; /* Dark blue input background */
+    --ring: 210 100% 66%; /* Bright blue for focus rings */
+    
+    --radius: 0.6rem;
+    
+    /* Chart Colors */
+    --chart-1: 210 100% 66%; /* Bright blue */
+    --chart-2: 250 100% 72%; /* Purple */
+    --chart-3: 6 77% 69%; /* Coral red */
+    --chart-4: 146 44% 62%; /* Soft Green */
+    --chart-5: 26 100% 67%; /* Peach */
+    
+    /* Sidebar Colors */
+    --sidebar-background: 240 70% 7%; /* Dark blue sidebar - slightly darker */
+    --sidebar-foreground: 0 0% 100%; /* White text on sidebar */
+    --sidebar-primary: 210 100% 66%; /* Bright blue for primary sidebar elements */
+    --sidebar-primary-foreground: 0 0% 100%; /* White text */
+    --sidebar-accent: 240 50% 12%; /* Slightly lighter than background for accent */
+    --sidebar-accent-foreground: 210 40% 80%; /* Light blue text */
+    --sidebar-border: 240 50% 12%; /* Dark blue border */
+    --sidebar-ring: 210 100% 66%; /* Bright blue ring */
+  }
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  background: linear-gradient(135deg, hsl(240, 60%, 8%), hsl(260, 60%, 12%)) !important;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent)/0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
+.link {
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: hsl(var(--primary));
+  transition: width 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* Add a gradient background to match the image */
+body {
+  background: linear-gradient(135deg, hsl(240, 60%, 8%), hsl(260, 60%, 12%)) !important;
+  min-height: 100vh;
+}
+
+.companies::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  color: hsl(240, 30%, 20%);
+  background: radial-gradient(50% 56400% at 50% 100%, hsl(240, 40%, 15%) 0%, rgba(169, 163, 194, 0) 100%);
+}
+
+.companies::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 20px;
+  width: 70%;
+  border-radius: 100%;
+  filter: blur(6rem);
+  background: hsl(210, 100%, 66%); /* Bright blue glow */
+}
+
+.footer::before {
+  background: radial-gradient(50% 56400% at 50% 100%, hsl(240, 40%, 15%) 0%, rgba(169, 163, 194, 0) 100%);
+  top: 0;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  color: hsl(240, 60%, 8%);
+}
+
+/* Typography with Montserrat */
+body, button, input, select, textarea {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700; /* Bold */
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500; /* Medium */
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600; /* Semibold */
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 500; /* Medium */
+}
+
+p {
+  font-size: 14px;
+  font-weight: 500; /* Medium */
+}
+
+/* Component-specific overrides */
+.btn-secondary {
+  background-color: hsl(250, 100%, 72%) !important; /* Purple accent */
+  color: white !important;
+}
+
+.btn-secondary:hover {
+  background-color: hsl(250, 100%, 65%) !important; /* Darker purple on hover */
+  box-shadow: 0 0 15px rgba(153, 102, 255, 0.5) !important; /* Purple glow */
+}
+
+/* Card style refinements to match the dark theme */
+.bg-card {
+  background-color: hsl(240, 50%, 13%) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Add subtle glow to cards on hover */
+.bg-card:hover {
+  box-shadow: 0 8px 30px rgba(102, 163, 255, 0.15) !important;
+}
+
+/* Buttons should have a nice glowing effect */
+button:not(.btn-secondary):not([disabled]):hover {
+  box-shadow: 0 0 15px rgba(102, 163, 255, 0.5) !important; /* Blue glow */
+}
+
+button:not([disabled]):hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.glow-box {
+  box-shadow: 0 0 20px rgba(102, 163, 255, 0.3);
+}
+
+/* Alert style refinements */
+.bg-destructive {
+  background-color: hsl(0, 84%, 60%) !important;
+}
+
+/* Fix for button variants */
+.bg-blue-500 {
+  background-color: hsl(210, 100%, 66%) !important; /* Bright blue */
+}
+
+.bg-blue-600 {
+  background-color: hsl(210, 100%, 56%) !important; /* Slightly darker blue */
+}
+
+/* Fix for any accent inconsistencies */
+.text-accent-foreground {
+  color: white !important;
+}
+
+/* Ensure form elements use the correct colors */
+input:focus, 
+select:focus, 
+textarea:focus {
+  border-color: hsl(210, 100%, 66%) !important; /* Bright blue */
+  box-shadow: 0 0 10px rgba(102, 163, 255, 0.3) !important; /* Subtle blue glow */
+}
+
+/* Add glowing effects to make it match the image */
+.glow-text {
+  text-shadow: 0 0 10px rgba(102, 163, 255, 0.5);
+}
+
+.glow-box {
+  box-shadow: 0 0 20px rgba(102, 163, 255, 0.3);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: #ffffff !important;
+  transition: background-color 9999s ease-in-out 0s;
+  caret-color: white;
+  box-shadow: 0 0 0px 1000px rgba(15, 23, 42, 0.4) inset !important; /* Match your input bg */
+}
