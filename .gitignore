@@ -40,5 +40,15 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# IDE settings (optional, safe to ignore)
+/.vscode/
+
+# if you're using yarn or pnpm, ignore npm lockfile
+package-lock.json
+
+# Optional: ignore raw assets folder if exists
+/public/assets/raw
+
+# Remove any accidental files
 dummy
 ignore
